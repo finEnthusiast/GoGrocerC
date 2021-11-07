@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
+import '../register/register_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -286,8 +287,19 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   ),
                                 ),
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    setState(() => _loadingButton2 = true);
+                                    try {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              RegisterWidget(),
+                                        ),
+                                      );
+                                    } finally {
+                                      setState(() => _loadingButton2 = false);
+                                    }
                                   },
                                   text: 'Register',
                                   options: FFButtonOptions(

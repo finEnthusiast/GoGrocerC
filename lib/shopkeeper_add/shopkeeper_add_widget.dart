@@ -51,268 +51,273 @@ class _ShopkeeperAddWidgetState extends State<ShopkeeperAddWidget> {
         elevation: 10,
       ),
       backgroundColor: Color(0xFF4B39EF),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 1,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.primaryColor,
-                  image: DecorationImage(
-                    fit: BoxFit.fitWidth,
-                    image: Image.asset(
-                      'assets/images/home_template2@3x.png',
-                    ).image,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 1,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.primaryColor,
+                    image: DecorationImage(
+                      fit: BoxFit.fitWidth,
+                      image: Image.asset(
+                        'assets/images/home_template2@3x.png',
+                      ).image,
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              'assets/images/Screenshot_2021-11-06_at_3.54.47_AM.png',
-                              width: 30,
-                              height: 30,
-                              fit: BoxFit.cover,
-                            ),
-                            Text(
-                              'GoGrocer',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Montserrat',
-                                color: FlutterFlowTheme.tertiaryColor,
-                                fontSize: 10,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            )
-                          ],
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 80, 20, 0),
-                          child: Row(
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    'Add Item',
-                                    style: FlutterFlowTheme.subtitle1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.tertiaryColor,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 12, 0, 0),
-                                    child: Container(
-                                      width: 120,
-                                      height: 3,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.tertiaryColor,
-                                        borderRadius: BorderRadius.circular(2),
-                                      ),
-                                    ),
-                                  )
-                                ],
+                              Image.asset(
+                                'assets/images/Screenshot_2021-11-06_at_3.54.47_AM.png',
+                                width: 30,
+                                height: 30,
+                                fit: BoxFit.cover,
+                              ),
+                              Text(
+                                'GoGrocer',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Montserrat',
+                                  color: FlutterFlowTheme.tertiaryColor,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w300,
+                                ),
                               )
                             ],
                           ),
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
-                          child: TextFormField(
-                            controller: emailAddressController1,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: 'Item Name',
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
-                              hintText: 'Enter your email...',
-                              hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.secondaryColor,
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  20, 24, 20, 24),
-                            ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.tertiaryColor,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 80, 20, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Text(
+                                      'Add Item',
+                                      style:
+                                          FlutterFlowTheme.subtitle1.override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.tertiaryColor,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 12, 0, 0),
+                                      child: Container(
+                                        width: 120,
+                                        height: 3,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.tertiaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(2),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 10, 20, 0),
-                          child: TextFormField(
-                            controller: emailAddressController2,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: 'Item Details',
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
+                            child: TextFormField(
+                              controller: emailAddressController1,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: 'Item Name',
+                                labelStyle: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0x98FFFFFF),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                hintText: 'Enter your email...',
+                                hintStyle: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0x98FFFFFF),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.secondaryColor,
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                    20, 24, 20, 24),
+                              ),
+                              style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
+                                color: FlutterFlowTheme.tertiaryColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
                               ),
-                              hintText: 'Enter your email...',
-                              hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.secondaryColor,
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  20, 24, 20, 24),
-                            ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.tertiaryColor,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 10, 20, 0),
-                          child: TextFormField(
-                            controller: emailAddressController3,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: 'Quantity',
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 20, 0),
+                            child: TextFormField(
+                              controller: emailAddressController2,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: 'Item Details',
+                                labelStyle: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0x98FFFFFF),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                hintText: 'Enter your email...',
+                                hintStyle: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0x98FFFFFF),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.secondaryColor,
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                    20, 24, 20, 24),
+                              ),
+                              style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
+                                color: FlutterFlowTheme.tertiaryColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
                               ),
-                              hintText: 'Enter your email...',
-                              hintStyle: FlutterFlowTheme.bodyText1.override(
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 20, 0),
+                            child: TextFormField(
+                              controller: emailAddressController3,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: 'Quantity',
+                                labelStyle: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0x98FFFFFF),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                hintText: 'Enter your email...',
+                                hintStyle: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0x98FFFFFF),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.secondaryColor,
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                    20, 24, 20, 24),
+                              ),
+                              style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Lexend Deca',
-                                color: Color(0x98FFFFFF),
+                                color: FlutterFlowTheme.tertiaryColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
                               ),
-                              enabledBorder: OutlineInputBorder(
+                              keyboardType: TextInputType.number,
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 24, 0, 20),
+                            child: FFButtonWidget(
+                              onPressed: () {
+                                print('Button-Login pressed ...');
+                              },
+                              text: 'Add',
+                              options: FFButtonOptions(
+                                width: 230,
+                                height: 60,
+                                color: FlutterFlowTheme.tertiaryColor,
+                                textStyle: FlutterFlowTheme.subtitle2.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.primaryColor,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                elevation: 3,
                                 borderSide: BorderSide(
-                                  color: Color(0x00000000),
+                                  color: Colors.transparent,
                                   width: 1,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: 8,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.secondaryColor,
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  20, 24, 20, 24),
+                              loading: _loadingButton,
                             ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.tertiaryColor,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
-                            keyboardType: TextInputType.number,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 20),
-                          child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button-Login pressed ...');
-                            },
-                            text: 'Add',
-                            options: FFButtonOptions(
-                              width: 230,
-                              height: 60,
-                              color: FlutterFlowTheme.tertiaryColor,
-                              textStyle: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.primaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                              elevation: 3,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1,
-                              ),
-                              borderRadius: 8,
-                            ),
-                            loading: _loadingButton,
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
-          )
-        ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
