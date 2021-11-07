@@ -1,1 +1,0 @@
-GoGrocer App, shopkeeper version
