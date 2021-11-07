@@ -1,21 +1,24 @@
+import '../enter_details/enter_details_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
+import '../login/login_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginWidget extends StatefulWidget {
-  LoginWidget({Key key}) : super(key: key);
+class RegisterWidget extends StatefulWidget {
+  RegisterWidget({Key key}) : super(key: key);
 
   @override
-  _LoginWidgetState createState() => _LoginWidgetState();
+  _RegisterWidgetState createState() => _RegisterWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget> {
+class _RegisterWidgetState extends State<RegisterWidget> {
   TextEditingController emailAddressController;
-  TextEditingController passwordController;
-  bool passwordVisibility;
+  TextEditingController passwordController1;
+  bool passwordVisibility1;
+  TextEditingController passwordController2;
+  bool passwordVisibility2;
   bool _loadingButton1 = false;
   bool _loadingButton2 = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -24,8 +27,10 @@ class _LoginWidgetState extends State<LoginWidget> {
   void initState() {
     super.initState();
     emailAddressController = TextEditingController();
-    passwordController = TextEditingController();
-    passwordVisibility = false;
+    passwordController1 = TextEditingController();
+    passwordVisibility1 = false;
+    passwordController2 = TextEditingController();
+    passwordVisibility2 = false;
   }
 
   @override
@@ -92,7 +97,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Sign In',
+                                    'Create Account',
                                     style: FlutterFlowTheme.subtitle1.override(
                                       fontFamily: 'Lexend Deca',
                                       color: Colors.white,
@@ -104,7 +109,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 12, 0, 0),
                                     child: Container(
-                                      width: 90,
+                                      width: 160,
                                       height: 3,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -169,8 +174,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                           padding:
                               EdgeInsetsDirectional.fromSTEB(20, 12, 20, 0),
                           child: TextFormField(
-                            controller: passwordController,
-                            obscureText: !passwordVisibility,
+                            controller: passwordController1,
+                            obscureText: !passwordVisibility1,
                             decoration: InputDecoration(
                               labelText: 'Password',
                               labelStyle: FlutterFlowTheme.bodyText1.override(
@@ -206,11 +211,72 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   20, 24, 20, 24),
                               suffixIcon: InkWell(
                                 onTap: () => setState(
-                                  () =>
-                                      passwordVisibility = !passwordVisibility,
+                                  () => passwordVisibility1 =
+                                      !passwordVisibility1,
                                 ),
                                 child: Icon(
-                                  passwordVisibility
+                                  passwordVisibility1
+                                      ? Icons.visibility_outlined
+                                      : Icons.visibility_off_outlined,
+                                  color: Color(0x98FFFFFF),
+                                  size: 20,
+                                ),
+                              ),
+                            ),
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 12, 20, 0),
+                          child: TextFormField(
+                            controller: passwordController2,
+                            obscureText: !passwordVisibility2,
+                            decoration: InputDecoration(
+                              labelText: 'Confirm Password',
+                              labelStyle: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0x98FFFFFF),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              hintText: 'Enter password again...',
+                              hintStyle: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0x98FFFFFF),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              filled: true,
+                              fillColor: Color(0xFF3124A1),
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                  20, 24, 20, 24),
+                              suffixIcon: InkWell(
+                                onTap: () => setState(
+                                  () => passwordVisibility2 =
+                                      !passwordVisibility2,
+                                ),
+                                child: Icon(
+                                  passwordVisibility2
                                       ? Icons.visibility_outlined
                                       : Icons.visibility_off_outlined,
                                   color: Color(0x98FFFFFF),
@@ -235,15 +301,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        NavBarPage(initialPage: 'Shopkeeper'),
+                                    builder: (context) => EnterDetailsWidget(),
                                   ),
                                 );
                               } finally {
                                 setState(() => _loadingButton1 = false);
                               }
                             },
-                            text: 'Login',
+                            text: 'Next',
                             options: FFButtonOptions(
                               width: 230,
                               height: 60,
@@ -271,7 +336,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Don\'t have an account?',
+                                'Already hava an account?',
                                 style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Lexend Deca',
                                   color: FlutterFlowTheme.tertiaryColor,
@@ -280,10 +345,20 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                               ),
                               FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  setState(() => _loadingButton2 = true);
+                                  try {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => LoginWidget(),
+                                      ),
+                                    );
+                                  } finally {
+                                    setState(() => _loadingButton2 = false);
+                                  }
                                 },
-                                text: 'Register',
+                                text: 'Login',
                                 options: FFButtonOptions(
                                   width: 90,
                                   height: 30,

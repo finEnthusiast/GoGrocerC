@@ -5,27 +5,30 @@ import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginWidget extends StatefulWidget {
-  LoginWidget({Key key}) : super(key: key);
+class EnterDetailsWidget extends StatefulWidget {
+  EnterDetailsWidget({Key key}) : super(key: key);
 
   @override
-  _LoginWidgetState createState() => _LoginWidgetState();
+  _EnterDetailsWidgetState createState() => _EnterDetailsWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget> {
-  TextEditingController emailAddressController;
-  TextEditingController passwordController;
-  bool passwordVisibility;
-  bool _loadingButton1 = false;
-  bool _loadingButton2 = false;
+class _EnterDetailsWidgetState extends State<EnterDetailsWidget> {
+  TextEditingController emailAddressController1;
+  TextEditingController emailAddressController2;
+  TextEditingController emailAddressController3;
+  TextEditingController emailAddressController4;
+  TextEditingController emailAddressController5;
+  bool _loadingButton = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    emailAddressController = TextEditingController();
-    passwordController = TextEditingController();
-    passwordVisibility = false;
+    emailAddressController1 = TextEditingController();
+    emailAddressController2 = TextEditingController();
+    emailAddressController3 = TextEditingController();
+    emailAddressController4 = TextEditingController();
+    emailAddressController5 = TextEditingController();
   }
 
   @override
@@ -92,7 +95,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Sign In',
+                                    'Enter Details',
                                     style: FlutterFlowTheme.subtitle1.override(
                                       fontFamily: 'Lexend Deca',
                                       color: Colors.white,
@@ -104,7 +107,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 12, 0, 0),
                                     child: Container(
-                                      width: 90,
+                                      width: 140,
                                       height: 3,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -121,17 +124,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                           padding:
                               EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
                           child: TextFormField(
-                            controller: emailAddressController,
+                            controller: emailAddressController1,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Email Address',
+                              labelText: 'Shopkeeper Name',
                               labelStyle: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Lexend Deca',
                                 color: Color(0x98FFFFFF),
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
                               ),
-                              hintText: 'Enter your email...',
+                              hintText: 'Enter your name..',
                               hintStyle: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Lexend Deca',
                                 color: Color(0x98FFFFFF),
@@ -169,17 +172,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                           padding:
                               EdgeInsetsDirectional.fromSTEB(20, 12, 20, 0),
                           child: TextFormField(
-                            controller: passwordController,
-                            obscureText: !passwordVisibility,
+                            controller: emailAddressController2,
+                            obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Password',
+                              labelText: 'Mobile Number',
                               labelStyle: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Lexend Deca',
                                 color: Color(0x98FFFFFF),
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
                               ),
-                              hintText: 'Enter your password...',
+                              hintText: 'Enter your mobile number..',
                               hintStyle: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Lexend Deca',
                                 color: Color(0x98FFFFFF),
@@ -204,19 +207,151 @@ class _LoginWidgetState extends State<LoginWidget> {
                               fillColor: Color(0xFF3124A1),
                               contentPadding: EdgeInsetsDirectional.fromSTEB(
                                   20, 24, 20, 24),
-                              suffixIcon: InkWell(
-                                onTap: () => setState(
-                                  () =>
-                                      passwordVisibility = !passwordVisibility,
-                                ),
-                                child: Icon(
-                                  passwordVisibility
-                                      ? Icons.visibility_outlined
-                                      : Icons.visibility_off_outlined,
-                                  color: Color(0x98FFFFFF),
-                                  size: 20,
-                                ),
+                            ),
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
+                            keyboardType: TextInputType.number,
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 12, 20, 0),
+                          child: TextFormField(
+                            controller: emailAddressController3,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              labelText: 'Shop Name',
+                              labelStyle: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0x98FFFFFF),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
                               ),
+                              hintText: 'Enter your shop\'s name..',
+                              hintStyle: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0x98FFFFFF),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              filled: true,
+                              fillColor: Color(0xFF3124A1),
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                  20, 24, 20, 24),
+                            ),
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 12, 20, 0),
+                          child: TextFormField(
+                            controller: emailAddressController4,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              labelText: 'Shop Address',
+                              labelStyle: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0x98FFFFFF),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              hintText: 'Enter your shop\'s address..',
+                              hintStyle: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0x98FFFFFF),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              filled: true,
+                              fillColor: Color(0xFF3124A1),
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                  20, 24, 20, 24),
+                            ),
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 12, 20, 0),
+                          child: TextFormField(
+                            controller: emailAddressController5,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              labelText: 'Pincode',
+                              labelStyle: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0x98FFFFFF),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              hintText: 'Enter pincode..',
+                              hintStyle: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0x98FFFFFF),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              filled: true,
+                              fillColor: Color(0xFF3124A1),
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                  20, 24, 20, 24),
                             ),
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Lexend Deca',
@@ -230,7 +365,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              setState(() => _loadingButton1 = true);
+                              setState(() => _loadingButton = true);
                               try {
                                 await Navigator.push(
                                   context,
@@ -240,10 +375,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   ),
                                 );
                               } finally {
-                                setState(() => _loadingButton1 = false);
+                                setState(() => _loadingButton = false);
                               }
                             },
-                            text: 'Login',
+                            text: 'Register',
                             options: FFButtonOptions(
                               width: 230,
                               height: 60,
@@ -261,50 +396,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               ),
                               borderRadius: 8,
                             ),
-                            loading: _loadingButton1,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 24),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Don\'t have an account?',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                              FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
-                                },
-                                text: 'Register',
-                                options: FFButtonOptions(
-                                  width: 90,
-                                  height: 30,
-                                  color: Color(0x00FFFFFF),
-                                  textStyle:
-                                      FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF39D2C0),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  elevation: 0,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1,
-                                  ),
-                                  borderRadius: 0,
-                                ),
-                                loading: _loadingButton2,
-                              )
-                            ],
+                            loading: _loadingButton,
                           ),
                         )
                       ],
